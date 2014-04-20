@@ -1,0 +1,41 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/section_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+         />
+    
+	<LinearLayout 
+	    android:orientation="horizontal"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+	    >
+	    
+	    <Button 	        
+	        android:id="@+id/firstPage"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="gotoFirstPage"/>
+	    
+	    <Button 	        
+	        android:id="@+id/hundred"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="100"/>
+	    
+	    <Button
+	        android:id="@+id/ten" 	        
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="10"/>
+	    
+	</LinearLayout>
+	
+	    
+</LinearLayout>
