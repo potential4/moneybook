@@ -2,12 +2,17 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:minHeight="250dp"
+    android:minWidth="250dp"
+    android:background="@drawable/px_500"
+    android:padding="@dimen/widget_margin" >
     <TextView         
         android:id="@+id/targetText"
       	android:layout_width="fill_parent"
 	  	android:layout_height="wrap_content"
-	  	android:text="hello world"
+	  	android:textSize="50dp"
+	  	android:text="test"
 	  	
         />
     <LinearLayout 
@@ -15,28 +20,29 @@
       	android:layout_width="wrap_content"
 	  	android:layout_height="wrap_content" 
         >
-	    <Button
+	    <ImageButton
 	      android:id="@+id/btn1"
+	      android:background="@drawable/px_60"
 	      android:layout_width="wrap_content"
 		  android:layout_height="wrap_content"
-		  android:text="1"/>
-		<Button
-		    android:id="@+id/btn2"	    
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:text="2"/>    
-	    <Button
-	        android:id="@+id/btn3"
+		  android:layout_margin="@dimen/item_margin"
+		  />
+	    
+	    <ImageButton
+	      android:id="@+id/btn2"
+	      android:background="@drawable/px_60"
 	      android:layout_width="wrap_content"
 		  android:layout_height="wrap_content"
-		  android:text="3"/>
-		<Button	    
-		    android:id="@+id/btn4"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:text="4"/>    
-	        
-        
+		  android:layout_margin="@dimen/item_margin"
+		  />
+	    
+	    <ImageButton
+	      android:id="@+id/btn3"
+	      android:background="@drawable/px_60"
+	      android:layout_width="wrap_content"
+		  android:layout_height="wrap_content"
+		  android:layout_margin="@dimen/item_margin"
+		  />
         
     </LinearLayout>
   		
