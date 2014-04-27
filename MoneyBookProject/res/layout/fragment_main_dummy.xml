@@ -5,37 +5,101 @@
 	android:layout_height="match_parent" >
 
     <TextView
-        android:id="@+id/section_label"
+        android:id="@+id/month"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="0"
+        android:layout_gravity="right"
+        android:textSize="20dp"
+        android:text="월"
          />
+
+    <TextView
+        android:id="@+id/totalMinusMoney"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"        
+        android:text="0"
+        android:textSize="80dp" />    
+    
     
 	<LinearLayout 
 	    android:orientation="horizontal"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
+		android:layout_gravity="center"
 	    >
-	    
+	    <!-- 
 	    <Button 	        
 	        android:id="@+id/firstPage"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:text="gotoFirstPage"/>
+			android:text="gotoFirstPage"/> -->
+	    <Button 	        
+	        android:id="@+id/tenThousand"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="만"/>
+	    <Button 	        
+	        android:id="@+id/thousand"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="천"/>
 	    
 	    <Button 	        
 	        android:id="@+id/hundred"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:text="100"/>
+			android:text="백"/>
 	    
 	    <Button
 	        android:id="@+id/ten" 	        
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:text="10"/>
+			android:text="십"/>
 	    
 	</LinearLayout>
 	
+	<LinearLayout 
+	    android:orientation="horizontal"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center"
+	    >
+	    <!-- 
+	    <Button 	        
+	        android:id="@+id/firstPage"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="gotoFirstPage"/> -->
+	    <Button 	        
+	        android:id="@+id/tenThousand"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="만"/>
+	    <Button 	        
+	        android:id="@+id/thousand"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="천"/>
 	    
+	    <Button 	        
+	        android:id="@+id/hundred"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="백"/>
+	    
+	    <Button
+	        android:id="@+id/ten" 	        
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="십"/>
+	    
+	</LinearLayout>
+	
+	<ListView
+	    android:id="@+id/listView" 
+	   	android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		
+	    ></ListView>
 </LinearLayout>

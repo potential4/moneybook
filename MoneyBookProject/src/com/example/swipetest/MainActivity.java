@@ -3,6 +3,7 @@ package com.example.swipetest;
 import java.util.ArrayList;
 import java.util.Locale;
 
+import com.example.fragment.MainFragment;
 import com.example.widgettest.TestWidget;
 
 import android.appwidget.AppWidgetManager;
@@ -79,9 +80,9 @@ public class MainActivity extends FragmentActivity {
 			// Return a DummySectionFragment (defined as a static inner class
 			// below) with the page number as its lone argument.
 			Log.i("position", Integer.toString(position));
-			Fragment fragment = new DummySectionFragment();
+			Fragment fragment = new MainFragment();
 			Bundle args = new Bundle();
-			args.putInt(DummySectionFragment.ARG_SECTION_NUMBER, position + 1);
+			args.putInt(MainFragment.ARG_SECTION_NUMBER, position + 1);
 			fragment.setArguments(args);
 			return fragment;
 		}
@@ -126,120 +127,5 @@ public class MainActivity extends FragmentActivity {
 		return mViewPager;
 	}
 	
-	/**
-	 * A dummy fragment representing a section of the app, but that simply
-	 * displays dummy text.
-	 */
-	public static class DummySectionFragment extends Fragment {
-		/**
-		 * The fragment argument representing the section number for this
-		 * fragment.
-		 */
-		public static final String ARG_SECTION_NUMBER = "section_number";
-		ListView listView;
-		ListItemAdapter listAdapter;
-		ArrayList<ContentsItem> itemList;
-		Button firstButton;
-		Button hundredButton;
-		Button tenButton;
-		public DummySectionFragment() {
-		}
-		@Override
-		public View onCreateView(LayoutInflater inflater, ViewGroup container,
-				Bundle savedInstanceState) {
-			View rootView = inflater.inflate(R.layout.fragment_main_dummy,
-					container, false);
-			final TextView dummyTextView = (TextView) rootView
-					.findViewById(R.id.section_label);
-			dummyTextView.setText(Integer.toString(getArguments().getInt(
-					ARG_SECTION_NUMBER)));
-			firstButton = (Button) rootView.findViewById(R.id.firstPage);
-			firstButton.setOnClickListener(new View.OnClickListener() {
-				
-				@Override
-				public void onClick(View v) {
-					// TODO Auto-generated method stub
-					((MainActivity)getActivity()).getViewPager().setCurrentItem(0,true);
-				}
-			});
-
-			
-			
-			
-			hundredButton = (Button) rootView.findViewById(R.id.hundred);
-			hundredButton.setOnClickListener(new View.OnClickListener() {
-				
-				@Override
-				public void onClick(View v) {
-					// TODO Auto-generated method stub
-					
-					Intent intent = new Intent( getActivity().getApplicationContext() , TestWidget.class);
-					intent.setAction("android.appwidget.action.APPWIDGET_UPDATE");
-					
-					// Use an array and EXTRA_APPWIDGET_IDS instead of AppWidgetManager.EXTRA_APPWIDGET_ID,
-					// since it seems the onUpdate() is only fired on that:
-				//	int[] ids = {widgetId};
-					//intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS,ids);
-					
-					
-					String moneyText = (String) dummyTextView.getText();
-					int money = Integer.parseInt(moneyText);
-					money += 100;
-
-					
-					dummyTextView.setText( Integer.toString(money) );
-					intent.putExtra("money", Integer.toString(money) );
-					getActivity().sendBroadcast(intent);
-				}
-			});
-			
-			tenButton = (Button) rootView.findViewById(R.id.ten);
-			tenButton.setOnClickListener(new View.OnClickListener() {
-				
-				@Override
-				public void onClick(View v) {
-					// TODO Auto-generated method stub
-					String moneyText = (String) dummyTextView.getText();
-					int money = Integer.parseInt(moneyText);
-					money += 10;
-					
-					dummyTextView.setText( Integer.toString(money) );
-				}
-			});
-			
-			
-			
-			/*
-			listAdapter = new ListItemAdapter(getActivity().getApplicationContext());
-			listAdapter.addItem(new ContentsItem());
-			listAdapter.addItem(new ContentsItem());
-			listAdapter.addItem(new ContentsItem());
-			listAdapter.addItem(new ContentsItem());
-			listAdapter.addItem(new ContentsItem());
-			listAdapter.addItem(new ContentsItem());
-			listAdapter.addItem(new ContentsItem());
-			listAdapter.addItem(new ContentsItem());
-			listAdapter.addItem(new ContentsItem());
-			listAdapter.addItem(new ContentsItem());
-			listAdapter.addItem(new ContentsItem());
-			listAdapter.addItem(new ContentsItem());
-			listAdapter.addItem(new ContentsItem());
-			listAdapter.addItem(new ContentsItem());
-			listAdapter.addItem(new ContentsItem());
-			listAdapter.addItem(new ContentsItem());
-			listAdapter.addItem(new ContentsItem());
-			listAdapter.addItem(new ContentsItem());
-			listAdapter.addItem(new ContentsItem());
-			listAdapter.addItem(new ContentsItem());
-			listAdapter.addItem(new ContentsItem());
-			listAdapter.addItem(new ContentsItem());
-			listAdapter.addItem(new ContentsItem());
-			listAdapter.addItem(new ContentsItem());
-			listView = (ListView) rootView.findViewById(R.id.listView);
-			listView.setAdapter(listAdapter);*/
-			
-			return rootView;
-		}
-	}
 
 }
